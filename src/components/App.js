@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ShopProvider from '../context/shopContext';
 import Home from '../pages/Home';
 import Product from '../pages/Product';
+import Header from '../components/Header';
+import Cart from '../components/Cart';
 
 
 const debug =
@@ -17,6 +19,8 @@ function App() {
     <ShopProvider>
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
         <Router>
+          <Header />
+          <Cart />
           <Switch>
             <Route path='/product/:id'>
               <Product />
